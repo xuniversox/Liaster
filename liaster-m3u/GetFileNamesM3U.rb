@@ -2,7 +2,8 @@
 dir_path = '.'
 
 capture_digit_from_bracket_regex = /\[(\d+)\]/
-remove_crap_regex = /^\.\/|\.(rb|lua|bat)| \(\[\]\)/
+remove_crap_regex = /^\.\/|\.(rb|lua|bat)| \(\[\]\)|GetFileNamesM3U|[a-z]\.m3u/
+
 
 filenames = Dir.glob(File.join(dir_path, '**/*'))
 .reject { | path | File.directory?(path) }
@@ -16,6 +17,10 @@ cleaned_filenames = removed_crap_filenames.join("\n")
 
 cleaned_filenames.gsub(/\s+\(.*\)$/, "")
 
+
+
 puts '#EXTM3U'
 
 puts cleaned_filenames
+
+
