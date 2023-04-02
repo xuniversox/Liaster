@@ -1,6 +1,0 @@
-minecraft
-..
-wp.bat
-GetFileNames.rb
-.
-mc.txt
