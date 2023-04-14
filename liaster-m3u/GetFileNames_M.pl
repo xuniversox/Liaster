@@ -16,8 +16,25 @@ my @files = grep { /\.(webm|mp4)$/i } glob("*"); # get all .webm and .mp4 files 
 } @files;
 
 
-    print "#EXTM3U\n";
+ 
+
+
+print "Enter the filename of the M3U8 file: ";
+chomp(my $variable = <STDIN>);
+
+my $output_file = $variable . ".m3u8";
+
+open(my $fh, '>', $output_file) or die "Cannot Open File '$output_file' $!";
+
+   print $fh "#EXTM3U\n";
+
 # print sorted filenames
 foreach my $file (@files) {
     print "$file\n";
+    print $fh "$file\n";
 }
+
+system("mpv -ontop -playlist $variable.m3u8");
+
+
+print "Variable has been saved to '$output_file' .";

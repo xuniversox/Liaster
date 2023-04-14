@@ -15,8 +15,20 @@ my @files = grep { /\.(webm|mp4|mkv)$/i } glob("*"); # get all .webm, .mp4 and .
 } @files;
 
 
+print "Enter the filename of the TXT file: ";
+chomp(my $variable = <STDIN>);
+
+my $output_file = $variable . ".txt";
+
+open(my $fh, '>', $output_file) or die "Cannot Open File '$output_file' $!";
     
 # print sorted filenames
 foreach my $file (@files) {
     print "$file\n";
+    print $fh "$file\n";
 }
+
+system("mpv -ontop -playlist $variable.txt");
+
+
+print "Variable has been saved to '$output_file' .";
