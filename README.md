@@ -1,8 +1,8 @@
 # Liaster
 Playlist Creation Tool
-#### If you want to be able to run liaster anywhere then put a directory with a liaster (variant) inside of your PATH environment variable; very similar to setting up a command line applications; unsurprisingly.
+##### If you want to be able to run liaster anywhere then put a directory with a liaster (variant) inside of your PATH environment variable; very similar to setting up a command line applications; unsurprisingly.
 
-#### You can avoid having to type perl every time you want to run a Perl script on Windows by adding the .pl file extension to the PATHEXT environment variable. Here's how:
+##### You can avoid having to type perl every time you want to run a Perl script on Windows by adding the .pl file extension to the PATHEXT environment variable. Here's how:
 
 Open the Start menu and search for "Environment Variables".
 
